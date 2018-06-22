@@ -13,7 +13,8 @@
     "test:e2e:dev": "start-server-and-test dev http://localhost:8080 cy:open",
     "dev": "webpack-serve",
     "build": "webpack --mode=production",
-    "start": "serve --listen 8080",
+    "postbuild": "cp ./public/index.html ./dist/index.html",
+    "start": "serve --listen 8080 dist",
     "validate": "npm run test",
     "setup": "npm run setup && npm run validate"
   },
