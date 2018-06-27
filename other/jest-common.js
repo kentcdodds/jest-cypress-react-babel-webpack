@@ -1,3 +1,5 @@
+// common project configuration used by the other configs
+
 const path = require('path')
 
 module.exports = {

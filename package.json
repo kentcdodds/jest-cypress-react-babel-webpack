@@ -15,12 +15,11 @@
     "pretest:e2e:run": "npm run build",
     "test:e2e:run": "start-server-and-test start http://localhost:8080 cy:run",
     "test:e2e:dev": "start-server-and-test dev http://localhost:8080 cy:open",
-    "lint": "jest --config ./other/jest.eslint.js",
     "dev": "webpack-serve",
     "build": "webpack --mode=production",
     "precommit": "lint-staged && npm run test:e2e:run",
     "postbuild": "cp ./public/index.html ./dist/index.html",
-    "start": "serve --listen 8080 dist",
+    "start": "serve --no-clipboard --listen 8080 dist",
     "validate": "npm run test:coverage && npm run test:e2e:run",
     "setup": "npm run setup && npm run validate"
   },

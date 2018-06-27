@@ -10,7 +10,7 @@ module.exports = {
     },
   },
   projects: [
-    // './other/jest.lint.js',
+    './other/jest.lint.js',
     './other/jest.client.js',
     './other/jest.server.js',
   ],

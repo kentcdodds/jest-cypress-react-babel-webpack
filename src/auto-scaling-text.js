@@ -8,7 +8,6 @@ class AutoScalingText extends React.Component {
   }
   node = React.createRef()
   getScale() {
-    debugger
     const node = this.node.current
     if (!node) {
       return 1
@@ -20,7 +19,7 @@ class AutoScalingText extends React.Component {
     const actualScale = availableWidth / actualWidth
 
     if (actualScale < 1) {
-      return actualScale
+      return actualScale * 0.9
     }
     return 1
   }
