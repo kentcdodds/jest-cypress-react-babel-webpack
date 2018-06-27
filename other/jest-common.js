@@ -4,6 +4,7 @@ const path = require('path')
 
 module.exports = {
   rootDir: path.join(__dirname, '..'),
+  moduleFileExtensions: ['js', 'json', 'jsx', 'node', 'css'],
   moduleNameMapper: {
     // module must come first
     '\\.module\\.css$': 'identity-obj-proxy',
