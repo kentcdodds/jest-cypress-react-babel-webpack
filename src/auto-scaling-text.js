@@ -8,6 +8,7 @@ class AutoScalingText extends React.Component {
   }
   node = React.createRef()
   getScale() {
+    debugger
     const node = this.node.current
     if (!node) {
       return 1
