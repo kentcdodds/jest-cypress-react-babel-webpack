@@ -4,9 +4,15 @@ module.exports = {
   coverageThreshold: {
     global: {
       statements: 17,
-      branches: 8,
+      branches: 4,
       functions: 20,
       lines: 17,
+    },
+    './src/utils.js': {
+      statements: 100,
+      branches: 80,
+      functions: 100,
+      lines: 100,
     },
   },
   projects: [
