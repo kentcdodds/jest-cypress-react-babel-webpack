@@ -1,38 +1,37 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './auto-scaling-text.module.css'
 
 class AutoScalingText extends React.Component {
-  state = {
-    scale: 1,
+  static propTypes = {
+    children: PropTypes.node,
   }
-
-  componentDidUpdate() {
-    const {scale} = this.state
-
-    const node = this.node
+  node = React.createRef()
+  getScale() {
+    const node = this.node.current
+    if (!node) {
+      return 1
+    }
     const parentNode = node.parentNode
 
     const availableWidth = parentNode.offsetWidth
     const actualWidth = node.offsetWidth
     const actualScale = availableWidth / actualWidth
 
-    if (scale === actualScale) return
-
     if (actualScale < 1) {
-      this.setState({scale: actualScale})
-    } else if (scale < 1) {
-      this.setState({scale: 1})
+      return actualScale
     }
+    return 1
   }
 
   render() {
-    const {scale} = this.state
+    const scale = this.getScale()
 
     return (
       <div
         className={styles.autoScalingText}
         style={{transform: `scale(${scale},${scale})`}}
-        ref={node => (this.node = node)}
+        ref={this.node}
       >
         {this.props.children}
       </div>

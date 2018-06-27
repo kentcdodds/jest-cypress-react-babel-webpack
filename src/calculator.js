@@ -1,17 +1,22 @@
 import React from 'react'
 import PointTarget from 'react-point'
-import Loadable from 'react-loadable'
+import loadable from 'react-loadable'
+import PropTypes from 'prop-types'
 import styles from './calculator.module.css'
 
 // NOTE: Normally I wouldn't do this, but I wanted to include code
 // splitting in this example because it's something you have to
 // handle with Jest and many people will want to know :).
-const CalculatorDisplay = Loadable({
+const CalculatorDisplay = loadable({
   loader: () => import('./calculator-display').then(mod => mod.default),
   loading: () => <div style={{height: 120}}>Loading display...</div>,
 })
 
 class CalculatorKey extends React.Component {
+  static propTypes = {
+    onPress: PropTypes.func.isRequired,
+    className: PropTypes.string,
+  }
   render() {
     const {onPress, className = '', ...props} = this.props
 
@@ -169,16 +174,6 @@ class Calculator extends React.Component {
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeyDown)
-    const stateFromLocalStorage = window.localStorage.getItem(
-      'calculator-state',
-    )
-    if (stateFromLocalStorage) {
-      this.setState(JSON.parse(stateFromLocalStorage))
-    }
-  }
-
-  componentDidUpdate() {
-    window.localStorage.setItem('calculator-state', JSON.stringify(this.state))
   }
 
   componentWillUnmount() {

@@ -1,8 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import {render} from 'react-testing-library'
 import Calculator from '../calculator'
 
 test('mounts', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<Calculator />, div)
+  render(<Calculator />)
 })

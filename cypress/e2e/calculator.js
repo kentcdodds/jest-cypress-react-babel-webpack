@@ -1,8 +1,7 @@
 /* globals cy */
 describe('calculator', () => {
   it('can visit the app', () => {
-    cy
-      .visit('/')
+    cy.visit('/')
       .getByText(/^1$/)
       .click()
       .getByText(/^\+$/)

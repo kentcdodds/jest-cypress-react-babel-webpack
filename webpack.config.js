@@ -4,38 +4,38 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve('dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.css$/,
         exclude: /\.module\.css$/,
-        use: [{loader: 'style-loader'}, {loader: 'css-loader'}]
+        use: [{loader: 'style-loader'}, {loader: 'css-loader'}],
       },
       {
         test: /\.module\.css$/,
         use: [
           {loader: 'style-loader'},
-          {loader: 'css-loader', options: {modules: true, camelCase: true}}
-        ]
+          {loader: 'css-loader', options: {modules: true, camelCase: true}},
+        ],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: 'babel-loader',
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        use: 'file-loader'
-      }
-    ]
-  }
+        use: 'file-loader',
+      },
+    ],
+  },
 }
 
 if (process.env.WEBPACK_SERVE) {
   module.exports.mode = 'development'
   module.exports.serve = {
-    content: path.join(__dirname, './public')
+    content: path.join(__dirname, './public'),
   }
 }
