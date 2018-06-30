@@ -9,6 +9,6 @@ notifications:
 node_js: '8'
 install: npm install
 script: npm run validate
-after_script: npx codecov
+after_script: npx codecov@3
 branches:
   only: master
