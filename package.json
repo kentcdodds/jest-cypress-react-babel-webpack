@@ -4,13 +4,14 @@
   "description": "See how to configure Jest and Cypress with React, Babel, and Webpack",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "dev": "webpack-serve",
     "build": "webpack --mode=production",
     "postbuild": "cp ./public/index.html ./dist/index.html",
     "start": "serve --no-clipboard --listen 8080 dist",
     "lint": "eslint .",
     "format": "prettier \"**/*.js\" --write",
-    "validate": "npm run lint && npm run build",
+    "validate": "npm run lint && npm run test && npm run build",
     "setup": "npm run setup && npm run validate"
   },
   "keywords": [],
@@ -31,6 +32,7 @@
     "eslint-config-kentcdodds": "^14.0.0",
     "file-loader": "^1.1.11",
     "prettier": "^1.13.7",
+    "jest": "^23.2.0",
     "prop-types": "^15.6.2",
     "serve": "^9.1.0",
     "style-loader": "^0.21.0",
