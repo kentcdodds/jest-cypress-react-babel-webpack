@@ -6,6 +6,9 @@ module.exports = {
     path: path.resolve('dist'),
     filename: 'bundle.js',
   },
+  resolve: {
+    modules: ['node_modules', path.join(__dirname, 'src'), 'shared'],
+  },
   module: {
     rules: [
       {

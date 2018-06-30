@@ -8,7 +8,7 @@ import styles from './calculator.module.css'
 // splitting in this example because it's something you have to
 // handle with Jest and many people will want to know :).
 const CalculatorDisplay = loadable({
-  loader: () => import('./calculator-display').then(mod => mod.default),
+  loader: () => import('calculator-display').then(mod => mod.default),
   loading: () => <div style={{height: 120}}>Loading display...</div>,
 })
 
