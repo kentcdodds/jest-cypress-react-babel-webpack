@@ -34,6 +34,7 @@
     "prettier": "^1.13.7",
     "jest": "^23.2.0",
     "prop-types": "^15.6.2",
+    "react-testing-library": "^4.0.2",
     "serve": "^9.1.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.12.0",
