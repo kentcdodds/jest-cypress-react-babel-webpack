@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import AutoScalingText from './auto-scaling-text'
-import styles from './calculator-display.module.css'
 import {getFormattedValue} from './utils'
 
 class CalculatorDisplay extends React.Component {
@@ -16,7 +15,16 @@ class CalculatorDisplay extends React.Component {
     )
 
     return (
-      <div {...props} className={styles.calculatorDisplay}>
+      <div
+        {...props}
+        css={{
+          color: 'white',
+          background: '#1c191c',
+          lineHeight: '130px',
+          fontSize: '6em',
+          flex: '1',
+        }}
+      >
         <AutoScalingText>{formattedValue}</AutoScalingText>
       </div>
     )
