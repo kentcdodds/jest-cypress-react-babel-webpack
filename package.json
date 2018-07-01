@@ -34,6 +34,7 @@
     "prettier": "^1.13.7",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.2.0",
+    "jest-emotion": "^9.2.4",
     "prop-types": "^15.6.2",
     "react-testing-library": "^4.0.2",
     "serve": "^9.1.0",
