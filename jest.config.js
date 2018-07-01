@@ -15,5 +15,14 @@ module.exports = {
       lines: 100,
     },
   },
-  projects: ['./test/jest.client.js', './test/jest.server.js'],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/__tests__/',
+    '__server_tests__/',
+  ],
+  projects: [
+    './test/jest.lint.js',
+    './test/jest.client.js',
+    './test/jest.server.js',
+  ],
 }
