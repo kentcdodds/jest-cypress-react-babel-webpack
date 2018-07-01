@@ -28,4 +28,8 @@ module.exports = {
       lines: 100,
     },
   },
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
+  ],
 }
