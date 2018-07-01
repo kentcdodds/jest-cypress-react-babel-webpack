@@ -42,6 +42,7 @@
     "is-ci-cli": "^1.1.1",
     "jest": "^23.2.0",
     "jest-emotion": "^9.2.4",
+    "jest-watch-select-projects": "0.0.1",
     "jest-watch-typeahead": "^0.1.0",
     "prop-types": "^15.6.2",
     "react-testing-library": "^4.0.2",
