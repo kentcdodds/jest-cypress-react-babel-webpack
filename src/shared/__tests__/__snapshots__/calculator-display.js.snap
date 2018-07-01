@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mounts 1`] = `
+<div
+  class="css-xeqdt1"
+>
+  <div
+    class="autoScalingText"
+    style="transform: scale(1,1);"
+  >
+    0
+  </div>
+</div>
+`;
