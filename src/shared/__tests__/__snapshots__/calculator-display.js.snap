@@ -12,7 +12,7 @@ exports[`mounts 1`] = `
 }
 
 <div
-  class="emotion-0"
+  class="emotion-0 emotion-1"
 >
   <div
     class="autoScalingText"
