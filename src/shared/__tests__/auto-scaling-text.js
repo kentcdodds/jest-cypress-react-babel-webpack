@@ -2,6 +2,6 @@ import React from 'react'
 import {render} from 'calculator-test-utils'
 import AutoScalingText from '../auto-scaling-text'
 
-test('mounts', () => {
+test('renders', () => {
   render(<AutoScalingText />)
 })

@@ -1,5 +1,5 @@
 {
-  "name": "calculator.solution",
+  "name": "calculator",
   "version": "1.0.0",
   "description": "See how to configure Jest and Cypress with React, Babel, and Webpack",
   "main": "index.js",
@@ -20,12 +20,13 @@
     "postbuild": "cp ./public/index.html ./dist/index.html",
     "start": "serve --no-clipboard --listen 8080 dist",
     "format": "prettier \"**/*.js\" --write",
+    "lint": "jest --config test/jest.lint.js",
     "validate": "npm run test:coverage && npm run test:e2e:run",
     "setup": "npm run setup && npm run validate"
   },
   "keywords": [],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
-  "license": "GPLv3",
+  "license": "GPL-3.0",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.51",
     "@babel/plugin-proposal-class-properties": "7.0.0-beta.51",
@@ -34,7 +35,7 @@
     "@babel/preset-env": "^7.0.0-beta.51",
     "@babel/preset-react": "^7.0.0-beta.51",
     "babel-core": "7.0.0-bridge.0",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^8.0.0-beta.4",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "babel-plugin-emotion": "^9.2.4",
     "css-loader": "^0.28.11",
@@ -71,5 +72,13 @@
     "react-emotion": "^9.2.4",
     "react-loadable": "^5.4.0",
     "react-point": "^3.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kentcdodds/jest-cypress-react-babel-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kentcdodds/jest-cypress-react-babel-webpack/issues"
+  },
+  "homepage": "https://github.com/kentcdodds/jest-cypress-react-babel-webpack#readme"
 }
