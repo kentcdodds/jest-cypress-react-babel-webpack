@@ -1,6 +1,6 @@
 .calculator {
-  width: 100%;
-  height: 100%;
+  width: 320px;
+  height: 520px;
   background: black;
 
   display: flex;

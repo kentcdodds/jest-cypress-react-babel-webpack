@@ -10,6 +10,7 @@ const DisplayContainer = styled.div(({theme}) => ({
   lineHeight: '130px',
   fontSize: '6em',
   flex: '1',
+  position: 'relative',
 }))
 
 class CalculatorDisplay extends React.Component {

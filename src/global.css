@@ -70,6 +70,7 @@
 /*  */
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 *,
 *:before,
@@ -80,6 +81,7 @@ html {
 body {
   margin: 0;
   font: 100 14px 'Roboto';
+  height: 100%;
 }
 
 button {
@@ -100,15 +102,14 @@ button:active {
 }
 
 #wrapper {
-  height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
 }
 
 #app {
-  width: 320px;
-  height: 520px;
+  height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
