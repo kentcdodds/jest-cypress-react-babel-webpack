@@ -24,5 +24,6 @@ module.exports = {
     './test/jest.lint.js',
     './test/jest.client.js',
     './test/jest.server.js',
+    './server/jest.config.js',
   ],
 }
