@@ -1,5 +1,6 @@
 import React from 'react'
 import {ThemeProvider} from 'emotion-theming'
+import {Link} from '@reach/router'
 import Calculator from './calculator'
 import * as themes from './themes'
 
@@ -35,6 +36,17 @@ class App extends React.Component {
                 dark
               </label>
             </fieldset>
+          </div>
+          <div
+            css={{
+              display: 'flex',
+              marginTop: 10,
+              marginBottom: 10,
+              justifyContent: 'space-around',
+            }}
+          >
+            <Link to="/register">Register</Link>
+            <Link to="/login">Login</Link>
           </div>
           <div style={{marginTop: 30, textAlign: 'center'}}>
             Calculator component{' '}

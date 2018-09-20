@@ -2,14 +2,16 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const detectPort = require('detect-port')
 const getDebugger = require('debug')
+const cors = require('cors')
 
 const debug = getDebugger('app')
 const users = {}
 
-async function start({port}) {
+async function start({port} = {}) {
   port = port || process.env.PORT || (await detectPort(3000))
 
   const app = express()
+  app.use(cors())
   app.use(bodyParser.json())
 
   function authenticate(req, res, next) {
@@ -28,7 +30,19 @@ async function start({port}) {
     return next()
   }
 
+  function handleLogin(req, res) {
+    const token = Math.random().toString()
+    const user = req.body
+    users[token] = user
+    return res.json({user: {token, ...user}})
+  }
+
   app.get('/me', authenticate, (req, res) => {
+    return res.json(req.user)
+  })
+
+  app.post('/me', authenticate, (req, res) => {
+    Object.assign(req.user, req.body)
     return res.json(req.user)
   })
 
@@ -37,12 +51,8 @@ async function start({port}) {
     res.sendStatus(200)
   })
 
-  app.post('/login', (req, res) => {
-    const token = Math.random().toString()
-    const user = req.body
-    users[token] = user
-    return res.json({user: {token, ...user}})
-  })
+  app.post('/register', handleLogin)
+  app.post('/login', handleLogin)
 
   return new Promise(resolve => {
     const server = app.listen(port, () => {

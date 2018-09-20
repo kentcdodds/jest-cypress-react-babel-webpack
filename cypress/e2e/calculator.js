@@ -1,6 +1,5 @@
-/* globals cy */
-describe('calculator', () => {
-  it('can visit the app', () => {
+describe('anonymous calculator', () => {
+  it('can make calculations', () => {
     cy.visit('/')
       .getByText(/^1$/)
       .click()
@@ -10,5 +9,7 @@ describe('calculator', () => {
       .click()
       .getByText(/^=$/)
       .click()
+      .getByTestId('total')
+      .should('have.text', '3')
   })
 })
