@@ -1,5 +1,5 @@
-describe('registration', () => {
-  it('can register a new user', () => {
+describe('login', () => {
+  it('should login an existing user', () => {
     cy.createUser().then(user => {
       cy.visit('/')
         .getByText(/login/i)

@@ -1,10 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {ThemeProvider} from 'emotion-theming'
 import {Link} from '@reach/router'
 import Calculator from './calculator'
 import * as themes from './themes'
 
 class App extends React.Component {
+  static propTypes = {
+    user: PropTypes.any,
+    logout: PropTypes.func.isRequired,
+  }
   state = {theme: 'dark'}
   handleThemeChange = ({target: {value}}) => this.setState({theme: value})
   render() {
@@ -45,8 +50,21 @@ class App extends React.Component {
               justifyContent: 'space-around',
             }}
           >
-            <Link to="/register">Register</Link>
-            <Link to="/login">Login</Link>
+            {this.props.user ? (
+              <>
+                <div data-testid="username-display">
+                  {this.props.user.username}
+                </div>
+                <button type="button" onClick={this.props.logout}>
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/register">Register</Link>
+                <Link to="/login">Login</Link>
+              </>
+            )}
           </div>
           <div style={{marginTop: 30, textAlign: 'center'}}>
             Calculator component{' '}

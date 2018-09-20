@@ -7,6 +7,7 @@ class LoginForm extends Component {
     onSuccess: PropTypes.func.isRequired,
     endpoint: PropTypes.string.isRequired,
   }
+  state = {error: null}
   handleSubmit = e => {
     e.preventDefault()
     const {
@@ -22,11 +23,14 @@ class LoginForm extends Component {
         },
       })
       .then(r => r.json())
-      .then(user => {
-        window.localStorage.setItem('token', user.token)
-        this.props.onSuccess(user)
-        navigate('/')
-      })
+      .then(
+        ({user}) => {
+          window.localStorage.setItem('token', user.token)
+          this.props.onSuccess(user)
+          navigate('/')
+        },
+        error => this.setState({error}),
+      )
   }
   render() {
     return (
@@ -74,6 +78,9 @@ class LoginForm extends Component {
         >
           Submit
         </button>
+        {this.state.error ? (
+          <div>There was an error. Please try again.</div>
+        ) : null}
       </form>
     )
   }
