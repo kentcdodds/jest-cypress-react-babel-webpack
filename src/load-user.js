@@ -9,7 +9,6 @@ function LoadUser({user, setUser, children}) {
   }
   return (
     <Component
-      initialState={{loaded: false}}
       didMount={() => {
         window
           .fetch('http://localhost:3000/me', {
@@ -20,8 +19,7 @@ function LoadUser({user, setUser, children}) {
             },
           })
           .then(r => r.json())
-          .then(setUser)
-          .catch(() => {
+          .then(setUser, () => {
             window.localStorage.removeItem('token')
             setUser(null)
           })
