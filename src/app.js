@@ -8,7 +8,7 @@ import * as themes from './themes'
 class App extends React.Component {
   static propTypes = {
     user: PropTypes.any,
-    logout: PropTypes.func.isRequired,
+    logout: PropTypes.func,
   }
   state = {theme: 'dark'}
   handleThemeChange = ({target: {value}}) => this.setState({theme: value})
