@@ -26,7 +26,8 @@
     "format": "prettier \"**/*.+(js|json|less|css|ts|tsx|md)\" --write",
     "lint": "jest --config test/jest.lint.js",
     "validate": "npm run test:coverage && npm run test:e2e:run",
-    "setup": "npm install && npm run validate"
+    "install:server": "cd server && npm install",
+    "setup": "npm install && npm run install:server && npm run validate"
   },
   "keywords": [],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
