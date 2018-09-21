@@ -3,13 +3,14 @@
 const path = require('path')
 
 module.exports = {
-  rootDir: path.join(__dirname, '../src'),
+  rootDir: path.join(__dirname, '..'),
   moduleDirectories: [
     'node_modules',
     path.join(__dirname, '../src'),
     'shared',
     __dirname,
   ],
+  testPathIgnorePatterns: ['<rootDir>/server/'],
   moduleNameMapper: {
     // module must come first
     '\\.module\\.css$': 'identity-obj-proxy',

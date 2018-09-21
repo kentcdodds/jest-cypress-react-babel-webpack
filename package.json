@@ -22,7 +22,7 @@
     "postbuild": "cp ./public/index.html ./dist/index.html",
     "start": "npm-run-all --parallel start:*",
     "start:server": "node server",
-    "start:client": "serve --no-clipboard --listen 8080 dist",
+    "start:client": "serve --no-clipboard --single --listen 8080 dist",
     "format": "prettier \"**/*.+(js|json|less|css|ts|tsx|md)\" --write",
     "lint": "jest --config test/jest.lint.js",
     "validate": "npm run test:coverage && npm run test:e2e:run",
