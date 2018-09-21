@@ -34,11 +34,14 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    contentBase: path.join(__dirname, './public'),
+    historyApiFallback: true,
+    // compress: true,
+    // port: 9000
+  },
 }
 
-if (process.env.WEBPACK_SERVE) {
-  module.exports.mode = 'development'
-  module.exports.serve = {
-    content: path.join(__dirname, './public'),
-  }
-}
+// if (process.env.npm_lifecycle_event === 'dev:client') {
+//   module.exports.mode = 'development'
+// }

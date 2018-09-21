@@ -10,6 +10,7 @@ module.exports = {
     'shared',
     __dirname,
   ],
+  testPathIgnorePatterns: ['<rootDir>/server/'],
   moduleNameMapper: {
     // module must come first
     '\\.module\\.css$': 'identity-obj-proxy',

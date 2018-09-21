@@ -7,8 +7,8 @@ cache:
 notifications:
   email: false
 node_js: '8'
-install: npm install
-script: npm run validate
+install: echo "install happens as part of setup"
+script: npm run setup
 after_script: npx codecov@3
 branches:
   only: master

@@ -1,7 +1,7 @@
-const {rootDir} = require('./jest-common')
+const path = require('path')
 
 module.exports = {
-  rootDir,
+  rootDir: path.join(__dirname, '..'),
   displayName: 'lint',
   runner: 'jest-runner-eslint',
   testMatch: ['<rootDir>/**/*.js'],

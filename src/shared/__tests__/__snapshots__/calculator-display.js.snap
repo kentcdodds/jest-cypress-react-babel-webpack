@@ -17,6 +17,7 @@ exports[`renders 1`] = `
 >
   <div
     class="autoScalingText"
+    data-testid="total"
     style="transform: scale(1,1);"
   >
     0
