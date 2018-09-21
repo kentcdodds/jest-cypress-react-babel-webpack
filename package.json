@@ -75,6 +75,7 @@
   "dependencies": {
     "@reach/component-component": "^0.1.1",
     "@reach/router": "^1.1.1",
+    "axios": "^0.18.0",
     "emotion": "^9.2.4",
     "emotion-theming": "^9.2.4",
     "react": "^16.4.1",

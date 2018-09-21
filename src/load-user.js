@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import axios from 'axios'
 import Component from '@reach/component-component'
 
 function LoadUser({user, setUser, children}) {
@@ -10,19 +11,19 @@ function LoadUser({user, setUser, children}) {
   return (
     <Component
       didMount={() => {
-        window
-          .fetch('http://localhost:3000/me', {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${token}`,
-            },
-          })
-          .then(r => r.json())
-          .then(setUser, () => {
+        axios({
+          method: 'GET',
+          url: 'http://localhost:3000/me',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }).then(
+          r => setUser(r.data),
+          () => {
             window.localStorage.removeItem('token')
             setUser(null)
-          })
+          },
+        )
       }}
     />
   )

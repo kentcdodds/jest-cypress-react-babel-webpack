@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import axios from 'axios'
 import {navigate} from '@reach/router'
 
 class LoginForm extends Component {
@@ -14,23 +15,18 @@ class LoginForm extends Component {
       username: {value: username},
       password: {value: password},
     } = e.target.elements
-    window
-      .fetch(`http://localhost:3000/${this.props.endpoint}`, {
-        method: 'POST',
-        body: JSON.stringify({username, password}),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      .then(r => r.json())
-      .then(
-        ({user}) => {
-          window.localStorage.setItem('token', user.token)
-          this.props.onSuccess(user)
-          navigate('/')
-        },
-        error => this.setState({error}),
-      )
+    axios({
+      method: 'POST',
+      url: `http://localhost:3000/${this.props.endpoint}`,
+      data: {username, password},
+    }).then(
+      ({data: {user}}) => {
+        window.localStorage.setItem('token', user.token)
+        this.props.onSuccess(user)
+        navigate('/')
+      },
+      error => this.setState({error}),
+    )
   }
   render() {
     return (

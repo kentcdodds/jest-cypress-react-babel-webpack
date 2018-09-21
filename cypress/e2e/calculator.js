@@ -22,7 +22,7 @@ describe('authenticated calculator', () => {
         .should('have.text', user.username)
         .getByText(/logout/i)
         .click()
-        .queryByTestId('username-display')
+        .get('[data=username-display]')
         .should('not.exist')
     })
   })

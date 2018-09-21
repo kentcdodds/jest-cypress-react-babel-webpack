@@ -14,7 +14,7 @@ describe('registration', () => {
       .click()
   })
 
-  it.skip(`should show an error message if there's an error registering`, () => {
+  it(`should show an error message if there's an error registering`, () => {
     cy.server()
     cy.route({
       method: 'POST',
