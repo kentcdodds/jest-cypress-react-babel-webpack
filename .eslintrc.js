@@ -8,6 +8,8 @@ module.exports = {
     'kentcdodds/jest',
     'kentcdodds/react',
   ],
+  plugins: ['eslint-plugin-cypress'],
+  env: {'cypress/globals': true},
   overrides: [
     {
       files: ['**/__tests__/**'],
