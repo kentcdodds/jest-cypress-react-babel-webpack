@@ -13,3 +13,25 @@ describe('anonymous calculator', () => {
       .should('have.text', '3')
   })
 })
+
+describe('authenticated calculator', () => {
+  it('displays the username', () => {
+    cy.createUser().then(user => {
+      cy.visit('/')
+        .getByText(/login/i)
+        .click()
+        .getByLabelText(/username/i)
+        .type(user.username)
+        .getByLabelText(/password/i)
+        .type(user.password)
+        .getByText(/submit/i)
+        .click()
+        .getByTestId('username-display')
+        .should('have.text', user.username)
+        .getByText(/logout/i)
+        .click()
+        .queryByTestId('username-display', {timeout: 300})
+        .should('not.exist')
+    })
+  })
+})
