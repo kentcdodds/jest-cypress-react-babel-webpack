@@ -1,0 +1,35 @@
+import {userBuilder} from '../support/generate'
+
+describe('login', () => {
+  it('should login an existing user', () => {
+    const user = userBuilder()
+    cy.visit('/')
+      .getByText(/register/i)
+      .click()
+      .getByLabelText(/username/i)
+      .type(user.username)
+      .getByLabelText(/password/i)
+      .type(user.password)
+      .getByText(/submit/i)
+      .click()
+      .getByText(/logout/i)
+      .click()
+      // now our test can start...
+      .getByText(/login/i)
+      .click()
+      .getByLabelText(/username/i)
+      .type(user.username)
+      .getByLabelText(/password/i)
+      .type(user.password)
+      .getByText(/submit/i)
+      .click()
+      // now let's verify things are set after login.
+      .url()
+      .should('eq', `${Cypress.config().baseUrl}/`)
+      .window()
+      .its('localStorage.token')
+      .should('be.a', 'string')
+      .getByTestId('username-display')
+      .should('have.text', user.username)
+  })
+})
