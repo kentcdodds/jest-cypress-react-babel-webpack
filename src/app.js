@@ -45,9 +45,12 @@ function App({user, logout}) {
         }}
       >
         {user ? (
-          <button type="button" onClick={logout}>
-            Logout
-          </button>
+          <>
+            <div data-testid="username-display">{user.username}</div>
+            <button type="button" onClick={logout}>
+              Logout
+            </button>
+          </>
         ) : (
           <>
             <Link to="/register">Register</Link>
