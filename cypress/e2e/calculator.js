@@ -17,15 +17,16 @@ describe('anonymous calculator', () => {
 describe('authenticated calculator', () => {
   it('displays the username', () => {
     cy.createUser().then(user => {
+      // login as the new user
+      cy.request({
+        url: 'http://localhost:3000/login',
+        method: 'POST',
+        body: user,
+      }).then(({body}) => {
+        window.localStorage.setItem('token', body.user.token)
+      })
+
       cy.visit('/')
-        .getByText(/login/i)
-        .click()
-        .getByLabelText(/username/i)
-        .type(user.username)
-        .getByLabelText(/password/i)
-        .type(user.password)
-        .getByText(/submit/i)
-        .click()
         .getByTestId('username-display')
         .should('have.text', user.username)
         .getByText(/logout/i)
