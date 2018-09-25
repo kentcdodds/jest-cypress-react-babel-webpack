@@ -10,3 +10,15 @@ Cypress.Commands.add('createUser', overrides => {
     })
     .then(({body}) => body.user)
 })
+
+Cypress.Commands.add('assertHome', () => {
+  cy.url().should('eq', `${Cypress.config().baseUrl}/`)
+})
+
+Cypress.Commands.add('assertLoggedInAs', user => {
+  cy.window()
+    .its('localStorage.token')
+    .should('be.a', 'string')
+    .getByTestId('username-display')
+    .should('have.text', user.username)
+})
