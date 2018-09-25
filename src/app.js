@@ -51,9 +51,14 @@ class App extends React.Component {
             }}
           >
             {this.props.user ? (
-              <button type="button" onClick={this.props.logout}>
-                Logout
-              </button>
+              <>
+                <div data-testid="username-display">
+                  {this.props.user.username}
+                </div>
+                <button type="button" onClick={this.props.logout}>
+                  Logout
+                </button>
+              </>
             ) : (
               <>
                 <Link to="/register">Register</Link>
