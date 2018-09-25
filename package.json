@@ -39,6 +39,7 @@
     "babel-plugin-emotion": "^9.2.10",
     "css-loader": "^1.0.0",
     "cypress": "^3.1.0",
+    "cypress-testing-library": "^2.2.1",
     "eslint": "^5.6.0",
     "eslint-config-cypress": "^0.28.0",
     "eslint-config-kentcdodds": "^14.0.4",
