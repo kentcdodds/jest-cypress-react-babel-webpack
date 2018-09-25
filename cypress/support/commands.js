@@ -20,7 +20,14 @@ Cypress.Commands.add('login', user => {
     })
     .then(({body}) => {
       window.localStorage.setItem('token', body.user.token)
+      return body.user
     })
+})
+
+Cypress.Commands.add('loginAsNewUser', () => {
+  cy.createUser().then(user => {
+    cy.login(user)
+  })
 })
 
 Cypress.Commands.add('assertHome', () => {
