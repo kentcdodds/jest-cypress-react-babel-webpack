@@ -20,4 +20,18 @@ describe('registration', () => {
       .getByTestId('username-display', {timeout: 500})
       .should('have.text', user.username)
   })
+
+  it(`should show an error message if there's an error registering`, () => {
+    cy.server()
+    cy.route({
+      method: 'POST',
+      url: 'http://localhost:3000/register',
+      status: 500,
+      response: {},
+    })
+    cy.visit('/register')
+      .getByText(/submit/i)
+      .click()
+      .getByText(/error.*try again/i)
+  })
 })
