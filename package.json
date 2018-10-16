@@ -27,6 +27,7 @@
     "lint": "jest --config test/jest.lint.js",
     "validate": "npm run test:coverage && npm run test:e2e:run",
     "postinstall": "cd server && npm install",
+    "netlify": "npm-run-all --parallel test:coverage build && cp -r coverage/lcov-report dist/lcov-report",
     "setup": "npm install && npm run validate"
   },
   "keywords": [],
