@@ -3,8 +3,8 @@ module.exports = {
   displayName: 'dom',
   testEnvironment: 'jest-environment-jsdom',
   setupFilesAfterEnv: [
-    'jest-dom/extend-expect',
-    'react-testing-library/cleanup-after-each',
+    '@testing-library/jest-dom/extend-expect',
+    '@testing-library/react/cleanup-after-each',
   ],
   snapshotSerializers: ['jest-emotion'],
 }

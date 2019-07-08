@@ -20,7 +20,10 @@ module.exports = {
         test: /\.module\.css$/,
         use: [
           {loader: 'style-loader'},
-          {loader: 'css-loader', options: {modules: true, camelCase: true}},
+          {
+            loader: 'css-loader',
+            options: {modules: true, localsConvention: 'camelCaseOnly'},
+          },
         ],
       },
       {
@@ -37,11 +40,5 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, './public'),
     historyApiFallback: true,
-    // compress: true,
-    // port: 9000
   },
 }
-
-// if (process.env.npm_lifecycle_event === 'dev:client') {
-//   module.exports.mode = 'development'
-// }

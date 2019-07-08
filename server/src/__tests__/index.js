@@ -2,8 +2,8 @@
 // I just wanted to have something that I could use to write the server
 // faster and make sure I don't break things as I go.
 // the whole server is pretty contrived. Keep that in mind :)
-const {start} = require('..')
 const axios = require('axios')
+const {start} = require('..')
 
 let baseURL, api, server
 

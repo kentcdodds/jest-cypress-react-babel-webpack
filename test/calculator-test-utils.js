@@ -1,5 +1,5 @@
 import React from 'react'
-import {render as rtlRender} from 'react-testing-library'
+import {render as rtlRender} from '@testing-library/react'
 import {ThemeProvider} from 'emotion-theming'
 import * as themes from '../src/themes'
 
@@ -8,6 +8,6 @@ function render(ui, {theme = themes.dark, ...options} = {}) {
   return rtlRender(ui, {wrapper: Wrapper, ...options})
 }
 
-export * from 'react-testing-library'
+export * from '@testing-library/react'
 // override the built-in render with our own
 export {render}
