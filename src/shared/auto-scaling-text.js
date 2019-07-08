@@ -26,7 +26,6 @@ function AutoScalingText({children}) {
       className={styles.autoScalingText}
       style={{transform: `scale(${scale},${scale})`}}
       ref={nodeRef}
-      data-testid="total"
     >
       {children}
     </div>

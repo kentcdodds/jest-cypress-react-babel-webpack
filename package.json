@@ -8,12 +8,6 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
-    "cy:run": "cypress run",
-    "cy:open": "cypress open",
-    "test:e2e": "is-ci \"test:e2e:run\" \"test:e2e:dev\"",
-    "pretest:e2e:run": "npm run build",
-    "test:e2e:run": "start-server-and-test start http://localhost:8080 cy:run",
-    "test:e2e:dev": "start-server-and-test dev http://localhost:8080 cy:open",
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "node server",
     "dev:client": "webpack-dev-server --mode=development",
@@ -24,14 +18,14 @@
     "start:client": "serve --no-clipboard --single --listen 8080 dist",
     "format": "prettier \"**/*.+(js|json|less|css|ts|tsx|md)\" --write",
     "lint": "jest --config test/jest.lint.js",
-    "validate": "npm run test:coverage && npm run test:e2e:run",
+    "validate": "npm run test:coverage",
     "postinstall": "cd server && yarn",
     "netlify": "npm-run-all --parallel test:coverage build && cp -r coverage/lcov-report dist/lcov-report",
     "setup": "yarn && npm run validate"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run test:e2e:run"
+      "pre-commit": "lint-staged"
     }
   },
   "keywords": [],
@@ -47,15 +41,12 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.5.1",
     "@emotion/babel-preset-css-prop": "^10.0.14",
-    "@testing-library/cypress": "^4.0.4",
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.4",
     "babel-loader": "^8.0.6",
     "babel-plugin-dynamic-import-node": "^2.3.0",
     "css-loader": "^3.0.0",
-    "cypress": "^3.3.2",
     "eslint": "^6.0.1",
-    "eslint-config-cypress": "^0.28.0",
     "eslint-config-kentcdodds": "^14.3.3",
     "eslint-import-resolver-jest": "^2.1.2",
     "file-loader": "^4.0.0",
