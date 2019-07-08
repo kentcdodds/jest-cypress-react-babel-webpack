@@ -1,8 +1,13 @@
 sudo: false
 language: node_js
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
 cache:
   directories:
     - ~/.npm
+    - ~/.cache
 notifications:
   email: false
 node_js: '12'

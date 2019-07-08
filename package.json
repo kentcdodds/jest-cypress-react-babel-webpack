@@ -8,6 +8,12 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test:e2e": "is-ci \"test:e2e:run\" \"test:e2e:dev\"",
+    "pretest:e2e:run": "npm run build",
+    "test:e2e:run": "start-server-and-test start http://localhost:8080 cy:run",
+    "test:e2e:dev": "start-server-and-test dev http://localhost:8080 cy:open",
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "node server",
     "dev:client": "webpack-dev-server --mode=development",
@@ -18,7 +24,7 @@
     "start:client": "serve --no-clipboard --single --listen 8080 dist",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|css|html|md)\"",
     "lint": "jest --config test/jest.lint.js",
-    "validate": "npm run test:coverage",
+    "validate": "npm run test:coverage && npm run test:e2e:run",
     "postinstall": "cd server && npm install",
     "netlify": "npm-run-all --parallel test:coverage build && cp -r coverage/lcov-report dist/lcov-report",
     "setup": "npm install && npm run validate"
@@ -30,7 +36,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run test:e2e:run"
     }
   },
   "lint-staged": {
@@ -75,6 +81,7 @@
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
     "serve": "^11.2.0",
+    "start-server-and-test": "^1.10.6",
     "style-loader": "^1.0.0",
     "test-data-bot": "^0.8.0",
     "webpack": "^4.41.2",
