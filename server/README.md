@@ -10,5 +10,5 @@ configuring these tools.
 
 Suffice it to say: When E2E testing an app with Cypress, you'll likely need to
 start the backend server in addition to the frontend app. This project will
-demonstrate how you might accomplish that, but the specific scripts you
-run to do that could vary.
+demonstrate how you might accomplish that, but the specific scripts you run to
+do that could vary.
