@@ -31,6 +31,7 @@
     "eslint-config-cypress": "^0.28.0",
     "eslint-config-kentcdodds": "^14.6.1",
     "file-loader": "^5.0.2",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
