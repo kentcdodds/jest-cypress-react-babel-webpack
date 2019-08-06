@@ -4,7 +4,11 @@ import {ThemeProvider} from 'emotion-theming'
 import * as themes from '../src/themes'
 
 function render(ui, {theme = themes.dark, ...options} = {}) {
-  const Wrapper = props => <ThemeProvider theme={theme} {...props} />
+  const Wrapper = props => (
+    <React.Suspense fallback="test-suspense-loading">
+      <ThemeProvider theme={theme} {...props} />
+    </React.Suspense>
+  )
   return rtlRender(ui, {wrapper: Wrapper, ...options})
 }
 

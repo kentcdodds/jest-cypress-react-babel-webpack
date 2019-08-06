@@ -1,16 +1,12 @@
 import React from 'react'
 import PointTarget from 'react-point'
-import loadable from 'react-loadable'
 import PropTypes from 'prop-types'
 import styles from './calculator.module.css'
 
 // NOTE: Normally I wouldn't do this, but I wanted to include code
 // splitting in this example because it's something you have to
 // handle with Jest and many people will want to know :).
-const CalculatorDisplay = loadable({
-  loader: () => import('calculator-display').then(mod => mod.default),
-  loading: () => <div style={{height: 120}}>Loading display...</div>,
-})
+const CalculatorDisplay = React.lazy(() => import('calculator-display'))
 
 function CalculatorKey({onPress, className = '', ...props}) {
   return (
@@ -174,7 +170,11 @@ function Calculator() {
 
   return (
     <div className={styles.calculator}>
-      <CalculatorDisplay value={displayValue} />
+      <React.Suspense
+        fallback={<div style={{height: 120}}>Loading display...</div>}
+      >
+        <CalculatorDisplay value={displayValue} />
+      </React.Suspense>
       <div className={styles.calculatorKeypad}>
         <div className={styles.inputKeys}>
           <div className={styles.functionKeys}>
