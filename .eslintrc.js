@@ -13,9 +13,6 @@ module.exports = {
     {
       files: ['**/src/**'],
       settings: {'import/resolver': 'webpack'},
-      rules: {
-        'import/no-unassigned-import': ['warn', {allow: ['**/*.css']}],
-      },
     },
     {
       files: ['**/__tests__/**'],
