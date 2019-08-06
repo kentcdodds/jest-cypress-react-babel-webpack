@@ -33,6 +33,7 @@
     "file-loader": "^5.0.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "jest-emotion": "^10.0.17",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
     "serve": "^11.2.0",

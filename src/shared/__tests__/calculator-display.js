@@ -5,8 +5,19 @@ import CalculatorDisplay from '../calculator-display'
 test('renders', () => {
   const {container} = render(<CalculatorDisplay value="0" />)
   expect(container.firstChild).toMatchInlineSnapshot(`
+    .emotion-0 {
+      position: relative;
+      color: white;
+      background: #1c191c;
+      line-height: 130px;
+      font-size: 6em;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+    }
+
     <div
-      class="css-lq9ahq-calculator-display--CalculatorDisplay"
+      class="emotion-0"
     >
       <div
         class="autoScalingText"
