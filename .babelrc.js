@@ -20,7 +20,6 @@ module.exports = {
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',
-    'react-loadable/babel',
     isTest ? 'babel-plugin-dynamic-import-node' : null,
   ].filter(Boolean),
 }
