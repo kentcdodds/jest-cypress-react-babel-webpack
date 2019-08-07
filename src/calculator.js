@@ -1,12 +1,8 @@
 import React from 'react'
 import PointTarget from 'react-point'
 import PropTypes from 'prop-types'
+import CalculatorDisplay from 'calculator-display'
 import styles from './calculator.module.css'
-
-// NOTE: Normally I wouldn't do this, but I wanted to include code
-// splitting in this example because it's something you have to
-// handle with Jest and many people will want to know :).
-const CalculatorDisplay = React.lazy(() => import('calculator-display'))
 
 function CalculatorKey({onPress, className = '', ...props}) {
   return (
