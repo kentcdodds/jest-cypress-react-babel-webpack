@@ -7,6 +7,11 @@ module.exports = {
     'kentcdodds/jest',
     'kentcdodds/react',
   ],
+  rules: {
+    // https://github.com/benmosher/eslint-plugin-import/issues/1446
+    'import/named': 'off',
+  },
+  settings: {'import/resolver': 'node'},
   plugins: ['eslint-plugin-cypress'],
   env: {'cypress/globals': true},
   overrides: [
