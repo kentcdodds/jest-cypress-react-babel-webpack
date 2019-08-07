@@ -2,32 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {ThemeProvider} from 'emotion-theming'
 import {Link} from '@reach/router'
+import Calculator from './calculator'
 import * as themes from './themes'
-
-const Calculator = React.lazy(() => import('./calculator'))
 
 function App({user, logout}) {
   const [theme, setTheme] = React.useState('dark')
   const handleThemeChange = ({target: {value}}) => setTheme(value)
   return (
     <ThemeProvider theme={themes[theme]}>
-      <React.Suspense
-        fallback={
-          <div
-            css={{
-              width: '320px',
-              height: '520px',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            loading...
-          </div>
-        }
-      >
-        <Calculator />
-      </React.Suspense>
+      <Calculator />
       <div style={{marginTop: 30}}>
         <fieldset>
           <legend>Theme</legend>
