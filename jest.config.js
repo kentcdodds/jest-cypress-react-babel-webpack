@@ -8,10 +8,10 @@ module.exports = {
   ],
   coverageThreshold: {
     global: {
-      statements: 10,
-      branches: 2,
-      functions: 10,
-      lines: 10,
+      statements: 15,
+      branches: 10,
+      functions: 15,
+      lines: 15,
     },
     './src/shared/utils.js': {
       statements: 100,
