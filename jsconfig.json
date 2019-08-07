@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "*": ["test/*", "src/shared/*"]
+      "*": ["test/*", "src/*", "src/shared/*"]
     }
   },
   "include": ["src", "test"]
