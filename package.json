@@ -29,15 +29,22 @@
     "netlify": "npm-run-all --parallel test:coverage build && cp -r coverage/lcov-report dist/lcov-report",
     "setup": "npm install && npm run validate"
   },
+  "jest-runner-eslint": {
+    "cliOptions": {
+      "ignorePath": "./.gitignore"
+    }
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && npm run test:e2e:run"
     }
   },
-  "jest-runner-eslint": {
-    "cliOptions": {
-      "ignorePath": "./.gitignore"
-    }
+  "lint-staged": {
+    "**/*.+(js|json|css|html|md)": [
+      "prettier",
+      "jest --findRelatedTests",
+      "git add"
+    ]
   },
   "keywords": [],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
