@@ -22,7 +22,7 @@
     "start": "npm-run-all --parallel start:*",
     "start:server": "node server",
     "start:client": "serve --no-clipboard --single --listen 8080 dist",
-    "format": "prettier \"**/*.+(js|json|less|css|ts|tsx|md)\" --write",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|css|html|md)\"",
     "lint": "jest --config test/jest.lint.js",
     "validate": "npm run test:coverage && npm run test:e2e:run",
     "postinstall": "cd server && npm install",
@@ -32,6 +32,11 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && npm run test:e2e:run"
+    }
+  },
+  "jest-runner-eslint": {
+    "cliOptions": {
+      "ignorePath": "./.gitignore"
     }
   },
   "keywords": [],
