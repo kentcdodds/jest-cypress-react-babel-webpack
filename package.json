@@ -31,6 +31,7 @@
     "eslint": "^6.7.1",
     "eslint-config-cypress": "^0.28.0",
     "eslint-config-kentcdodds": "^14.6.1",
+    "eslint-import-resolver-jest": "^3.0.0",
     "file-loader": "^5.0.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
