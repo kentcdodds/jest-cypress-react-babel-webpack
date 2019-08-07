@@ -1,6 +1,6 @@
 module.exports = {
   ...require('./jest-common'),
-  displayName: 'dom',
+  displayName: 'client',
   testEnvironment: 'jest-environment-jsdom',
   setupFilesAfterEnv: [
     '@testing-library/jest-dom/extend-expect',
