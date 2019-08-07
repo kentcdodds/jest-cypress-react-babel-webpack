@@ -46,6 +46,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
+    "emotion-theming": "^10.0.14",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
