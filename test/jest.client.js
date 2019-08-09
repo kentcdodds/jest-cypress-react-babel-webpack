@@ -2,9 +2,6 @@ module.exports = {
   ...require('./jest-common'),
   displayName: 'client',
   testEnvironment: 'jest-environment-jsdom',
-  setupFilesAfterEnv: [
-    '@testing-library/jest-dom/extend-expect',
-    '@testing-library/react/cleanup-after-each',
-  ],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   snapshotSerializers: ['jest-emotion'],
 }
