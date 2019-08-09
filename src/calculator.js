@@ -1,18 +1,14 @@
 import React from 'react'
-import PointTarget from 'react-point'
 import PropTypes from 'prop-types'
 import CalculatorDisplay from 'calculator-display'
 import styles from './calculator.module.css'
 
-function CalculatorKey({onPress, className = '', ...props}) {
+function CalculatorKey({className = '', ...props}) {
   return (
-    <PointTarget onPoint={onPress}>
-      <button className={`${styles.calculatorKey} ${className}`} {...props} />
-    </PointTarget>
+    <button className={`${styles.calculatorKey} ${className}`} {...props} />
   )
 }
 CalculatorKey.propTypes = {
-  onPress: PropTypes.func.isRequired,
   className: PropTypes.string,
 }
 
@@ -176,19 +172,19 @@ function Calculator() {
           <div className={styles.functionKeys}>
             <CalculatorKey
               className={styles.keyClear}
-              onPress={() => (displayIsNonZero ? clearDisplay() : clearAll())}
+              onClick={() => (displayIsNonZero ? clearDisplay() : clearAll())}
             >
               {clearText}
             </CalculatorKey>
             <CalculatorKey
               className={styles.keySign}
-              onPress={() => toggleSign()}
+              onClick={() => toggleSign()}
             >
               ±
             </CalculatorKey>
             <CalculatorKey
               className={styles.keyPercent}
-              onPress={() => inputPercent()}
+              onClick={() => inputPercent()}
             >
               %
             </CalculatorKey>
@@ -196,64 +192,64 @@ function Calculator() {
           <div className={styles.digitKeys}>
             <CalculatorKey
               className={styles.key0}
-              onPress={() => inputDigit(0)}
+              onClick={() => inputDigit(0)}
             >
               0
             </CalculatorKey>
-            <CalculatorKey className={styles.keyDot} onPress={() => inputDot()}>
+            <CalculatorKey className={styles.keyDot} onClick={() => inputDot()}>
               ●
             </CalculatorKey>
             <CalculatorKey
               className={styles.key1}
-              onPress={() => inputDigit(1)}
+              onClick={() => inputDigit(1)}
             >
               1
             </CalculatorKey>
             <CalculatorKey
               className={styles.key2}
-              onPress={() => inputDigit(2)}
+              onClick={() => inputDigit(2)}
             >
               2
             </CalculatorKey>
             <CalculatorKey
               className={styles.key3}
-              onPress={() => inputDigit(3)}
+              onClick={() => inputDigit(3)}
             >
               3
             </CalculatorKey>
             <CalculatorKey
               className={styles.key4}
-              onPress={() => inputDigit(4)}
+              onClick={() => inputDigit(4)}
             >
               4
             </CalculatorKey>
             <CalculatorKey
               className={styles.key5}
-              onPress={() => inputDigit(5)}
+              onClick={() => inputDigit(5)}
             >
               5
             </CalculatorKey>
             <CalculatorKey
               className={styles.key6}
-              onPress={() => inputDigit(6)}
+              onClick={() => inputDigit(6)}
             >
               6
             </CalculatorKey>
             <CalculatorKey
               className={styles.key7}
-              onPress={() => inputDigit(7)}
+              onClick={() => inputDigit(7)}
             >
               7
             </CalculatorKey>
             <CalculatorKey
               className={styles.key8}
-              onPress={() => inputDigit(8)}
+              onClick={() => inputDigit(8)}
             >
               8
             </CalculatorKey>
             <CalculatorKey
               className={styles.key9}
-              onPress={() => inputDigit(9)}
+              onClick={() => inputDigit(9)}
             >
               9
             </CalculatorKey>
@@ -262,31 +258,31 @@ function Calculator() {
         <div className={styles.operatorKeys}>
           <CalculatorKey
             className={styles.keyDivide}
-            onPress={() => performOperation('/')}
+            onClick={() => performOperation('/')}
           >
             ÷
           </CalculatorKey>
           <CalculatorKey
             className={styles.keyMultiply}
-            onPress={() => performOperation('*')}
+            onClick={() => performOperation('*')}
           >
             ×
           </CalculatorKey>
           <CalculatorKey
             className={styles.keySubtract}
-            onPress={() => performOperation('-')}
+            onClick={() => performOperation('-')}
           >
             −
           </CalculatorKey>
           <CalculatorKey
             className={styles.keyAdd}
-            onPress={() => performOperation('+')}
+            onClick={() => performOperation('+')}
           >
             +
           </CalculatorKey>
           <CalculatorKey
             className={styles.keyEquals}
-            onPress={() => performOperation('=')}
+            onClick={() => performOperation('=')}
           >
             =
           </CalculatorKey>
