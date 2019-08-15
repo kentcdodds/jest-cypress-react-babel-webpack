@@ -58,7 +58,7 @@
     "@emotion/babel-preset-css-prop": "^10.0.14",
     "@testing-library/cypress": "^4.1.0",
     "@testing-library/jest-dom": "^4.0.0",
-    "@testing-library/react": "^9.0.2",
+    "@testing-library/react": "^9.1.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "cypress": "^3.4.1",
@@ -83,7 +83,7 @@
     "start-server-and-test": "^1.10.0",
     "style-loader": "^1.0.0",
     "test-data-bot": "^0.8.0",
-    "webpack": "^4.39.1",
+    "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.0"
   },
