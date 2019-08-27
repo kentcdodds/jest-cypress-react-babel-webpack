@@ -10,7 +10,7 @@ cache:
     - ~/.cache
 notifications:
   email: false
-node_js: '8'
+node_js: '12'
 install: echo "install happens as part of setup"
 script: npm run setup
 after_script: npx codecov@3
