@@ -12,8 +12,6 @@ module.exports = {
     'import/named': 'off',
   },
   settings: {'import/resolver': 'node'},
-  plugins: ['eslint-plugin-cypress'],
-  env: {'cypress/globals': true},
   overrides: [
     {
       files: ['**/src/**'],
