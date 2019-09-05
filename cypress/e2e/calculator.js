@@ -1,15 +1,15 @@
 describe('anonymous calculator', () => {
   it('can make calculations', () => {
     cy.visit('/')
-      .getByText(/^1$/)
+      .findByText(/^1$/)
       .click()
-      .getByText(/^\+$/)
+      .findByText(/^\+$/)
       .click()
-      .getByText(/^2$/)
+      .findByText(/^2$/)
       .click()
-      .getByText(/^=$/)
+      .findByText(/^=$/)
       .click()
-      .getByTestId('total')
+      .findByTestId('total')
       .should('have.text', '3')
   })
 })
@@ -18,9 +18,9 @@ describe('authenticated calculator', () => {
   it('displays the username', () => {
     cy.loginAsNewUser().then(user => {
       cy.visit('/')
-        .getByTestId('username-display')
+        .findByTestId('username-display')
         .should('have.text', user.username)
-        .getByText(/logout/i)
+        .findByText(/logout/i)
         .click()
         .queryByTestId('username-display', {timeout: 300})
         .should('not.exist')
