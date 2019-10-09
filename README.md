@@ -1,3 +1,9 @@
+<p align="center">
+<a href="https://codefund.io/properties/505/visit-sponsor">
+<img src="https://codefund.io/properties/505/sponsor" />
+</a>
+</p>
+
 <h1 align="center">
   Jest and Cypress with React, Babel, and Webpack
 </h1>
