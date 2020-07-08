@@ -21,14 +21,12 @@
 
 <hr />
 
+This is used for both
+["Configure Jest for Testing JavaScript Applications"](https://testingjavascript.com/courses/configure-jest-for-testing-javascript-applications-b3674a)
+and
+["Install, Configure, and Script Cypress for JavaScript Web Applications"](https://testingjavascript.com/courses/install-configure-and-script-cypress-for-javascript-web-applications-b5ee43)
+
 > Note: This project is intentionally over-engineered. The application itself is
 > very simple, but the tooling around it is pretty complicated. The goal is to
 > show what configuration would be like for a large real-world application
 > without having all the extra complexities of a real-world application.
-
-## License
-
-This material is available for private, non-commercial use under the
-[GPL version 3](http://www.gnu.org/licenses/gpl-3.0-standalone.html). If you
-would like to use this material to conduct your own workshop, please contact me
-at kent@doddsfamily.us
