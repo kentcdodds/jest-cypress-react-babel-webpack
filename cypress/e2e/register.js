@@ -4,16 +4,11 @@ describe('registration', () => {
   it('should register a new user', () => {
     const user = userBuilder()
     cy.visit('/')
-      .findByText(/register/i)
-      .click()
-      .findByLabelText(/username/i)
-      .type(user.username)
-      .findByLabelText(/password/i)
-      .type(user.password)
-      .findByText(/submit/i)
-      .click()
-      .assertHome()
-      .assertLoggedInAs(user)
+    cy.findByText(/register/i).click()
+    cy.findByLabelText(/username/i).type(user.username)
+    cy.findByLabelText(/password/i).type(user.password)
+    cy.findByText(/submit/i).click()
+    cy.assertHome().assertLoggedInAs(user)
   })
 
   it(`should show an error message if there's an error registering`, () => {
@@ -25,8 +20,7 @@ describe('registration', () => {
       response: {},
     })
     cy.visit('/register')
-      .findByText(/submit/i)
-      .click()
-      .findByText(/error.*try again/i)
+    cy.findByText(/submit/i).click()
+    cy.findByText(/error.*try again/i)
   })
 })
