@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {render as rtlRender} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import {ThemeProvider} from 'emotion-theming'
 import * as themes from '../src/themes'
 
@@ -17,4 +18,4 @@ function render(ui, {theme = themes.dark, ...options} = {}) {
 
 export * from '@testing-library/react'
 // override the built-in render with our own
-export {render}
+export {render, userEvent}

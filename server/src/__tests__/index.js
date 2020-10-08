@@ -7,19 +7,17 @@ const {start} = require('..')
 
 let baseURL, api, server
 
-beforeAll(async done => {
+beforeAll(async () => {
   server = await start({port: 8765})
   baseURL = `http://localhost:${server.address().port}/`
   api = axios.create({baseURL})
-  done()
 })
 
-afterAll(async done => {
+afterAll(async () => {
   await server.close()
-  done()
 })
 
-test('the server works', async done => {
+test('the server works', async () => {
   const testUser = {name: 'test'}
   // can register
   const {
@@ -70,5 +68,4 @@ test('the server works', async done => {
 
   const meError = await api.get('me').catch(e => e.response)
   expect(meError.status).toEqual(400)
-  done()
 })
