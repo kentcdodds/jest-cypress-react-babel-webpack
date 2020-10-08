@@ -18,7 +18,7 @@
     "dev:server": "node server",
     "dev:client": "webpack-dev-server --mode=development",
     "build": "webpack --mode=production",
-    "postbuild": "cp ./public/index.html ./dist/index.html",
+    "postbuild": "node -e \"require('fs').copyFileSync('./public/index.html', './dist/index.html')\"",
     "start": "npm-run-all --parallel start:*",
     "start:server": "node server",
     "start:client": "serve --no-clipboard --single --listen 8080 dist",
