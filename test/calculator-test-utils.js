@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import PropTypes from 'prop-types'
 import {render as rtlRender} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
