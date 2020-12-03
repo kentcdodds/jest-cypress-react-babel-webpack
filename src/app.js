@@ -1,6 +1,6 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
-import {ThemeProvider} from 'emotion-theming'
+import {ThemeProvider} from '@emotion/react'
 import {Link} from '@reach/router'
 import Calculator from './calculator'
 import * as themes from './themes'

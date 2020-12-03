@@ -10,7 +10,7 @@ module.exports = {
       {
         hoist: isProd,
         sourceMap: !isProd,
-        autoLabel: !isProd,
+        autoLabel: isProd ? 'never' : 'always',
         labelFormat: '[filename]--[local]',
       },
     ],
