@@ -1,5 +1,5 @@
 import React from 'react'
-import {ThemeProvider} from 'emotion-theming'
+import {ThemeProvider} from '@emotion/react'
 import Calculator from './calculator'
 import * as themes from './themes'
 

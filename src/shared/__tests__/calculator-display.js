@@ -12,8 +12,6 @@ test('renders', () => {
       -webkit-flex: 1;
       -ms-flex: 1;
       flex: 1;
-      color: white;
-      background: #1c191c;
     }
 
     <div

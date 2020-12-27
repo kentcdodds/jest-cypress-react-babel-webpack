@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {render as rtlRender} from '@testing-library/react'
-import {ThemeProvider} from 'emotion-theming'
+import {ThemeProvider} from '@emotion/react'
 import * as themes from '../src/themes'
 
 function render(ui, {theme = themes.dark, ...options} = {}) {
